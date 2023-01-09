@@ -1,0 +1,378 @@
+.container {
+  width: 1400px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+.section {
+  padding: 100px 0;
+}
+.gray {
+  background-color: var(--gray);
+}
+.section .container {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+strong {
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--h2);
+  line-height: 1.25;
+  margin-bottom: 30px;
+  /* font-size: */
+}
+
+.btn {
+  /* flex를 적용하지만 글자처럼 취급한다.  inline-block */
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 20px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  border-radius: 5px;
+  /* transition: background-color 0.25s ease, color 0.25s ease; */
+  transition: all 0.25s ease;
+}
+.btn--white {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn--round {
+  border-radius: 100px;
+}
+
+.btn span {
+  transition: transform 0.25s ease;
+}
+.btn:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+.btn:not(.btn--fixed):hover span {
+  /* not:가상연산자- btn--fixed 클래스에서는 적용시키지 않음 */
+  /* position: relative;
+  left: 20px; css3 */
+  transform: translateX(10px);
+}
+/********** common css ************/
+
+.products .products-banner a:hover .more {
+  visibility: visible;
+  transition: all 0.75s ease;
+  transform: rotate(90deg);
+}
+
+.products .products-banner a {
+  width: calc(50% - 10px);
+  position: relative; /*위치가 absolute인 자녀들의 위치를 잡아주기 위해 설정*/
+  overflow: hidden;
+  border-radius: 20px;
+}
+.products .products-banner a .products-banner-title {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  color: #ffffff;
+}
+
+.products .products-banner .more {
+  position: absolute;
+  right: 1px;
+  bottom: 30px;
+  color: #ffffff;
+  font-size: 40px;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.products .products-banner a:hover .more {
+  visibility: visible;
+  transition: all 0.75s ease;
+  transform: rotate(90deg);
+}
+/********** products end **********/
+.visual__video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.visual__txt {
+  position: absolute;
+  color: #fff;
+  bottom: 200px;
+  left: 50px;
+  font-size: 20px;
+  /* top,left,bottom,right */
+}
+.visual__txt h3 {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.visual__txt p {
+  margin-bottom: 30px;
+}
+/************ visual end ************/
+
+.about .about__txt p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+/* color  #ff00ff  / rgb(255,0 255)  / rgba(255,255,255,0.5) */
+
+/* id 100, class 10, tag 1 */
+.about .about__img {
+  width: 50%;
+}
+.about .about__img img {
+  width: 100%;
+}
+/*********** about end ***********/
+
+.products .container {
+  flex-direction: column;
+}
+.products .products-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.products .products-title p {
+  font-size: 20px;
+  margin: 20px;
+}
+.products .products-banner {
+  display: flex;
+  justify-content: space-between;
+}
+.products .products-banner a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: calc(50% - 10px);
+}
+/* pseudo element */
+.products .products-banner a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: background-color 0.25s ease;
+}
+
+/* element의 쌓이는 순서 
+1. 위에서 아래로 아래에 있을 수록 위로 올라간다. 
+2. 만약 position 속성이 있으면 태그의 순서와 상관없이 위로 올라간다.
+3. 쌓이는 순서는 z-index로 바꿀 수 있다.
+*/
+
+.products .products-banner a:hover:before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.products .products-banner a img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+.products .products-banner a .products-banner__title {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  top: 30px;
+  font-size: 20px;
+}
+.products .products-banner a .products-banner__title h3 {
+  font-size: var(--h2);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.products .products-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: #fff;
+  font-size: 64px;
+}
+/*********** products end ***********/
+
+.banner {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    270deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 14%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: #fff;
+}
+
+.banner h2 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+/*********** banner end ***********/
+
+.tech .container {
+  gap: 20px;
+}
+.tech .container .tech-item {
+  width: 33.33%;
+  margin-left: 10px;
+}
+.tech .container .tech-banner a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+}
+.tech .container .tech-banner a .tech-banner__title {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+}
+.tech .container .tech-banner a .tech-banner__title h3 {
+  font-size: var(--h3);
+  margin-bottom: 30px;
+}
+.tech .container .tech-banner img {
+  width: 100%;
+}
+
+.tech .tech-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: #ffffff;
+  font-size: 40px;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.tech .tech-banner a:hover .more {
+  visibility: visible;
+  transition: all 0.5s ease;
+  transform: rotate(90deg);
+}
+
+.tech .btn-tech {
+  margin-top: 20px;
+  height: 10px;
+}
+/*********** tech end ***********/
+
+.investors {
+  background-image: url(../images/main/main-investors.jpg);
+  /* 배경은 영역을 차지하는 게 아님. 그래서 빈 공간은 루프됨 */
+  background-repeat: no-repeat;
+  background-size: cover; /* cover는 무조건 채워지는 기능*/
+  background-position: 0 0; /* 위치 이동 , 50% -> 화면 가운데 이동*/
+}
+
+.investors .container {
+  flex-direction: column;
+  align-items: start;
+  color: #ffffff;
+}
+
+.investors .investors_list {
+  background-color: #fff;
+  backdrop-filter: blur(10px); /* 흐릿하게  */
+  padding: 50px;
+  border-radius: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* 가로로 계속 가지 않고 일정 넓이 이상에선 밑으로 감*/
+}
+
+.investors .investors_list li {
+  width: 25%;
+  /* 예를 들어 아이템이 8개고 2줄로 플렉스하고 싶다면 한 아이템을 25% 차지하게 만들면 됨*/
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.investors .investors_list li:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+/*********** investors end ***********/
+
+.news .btn {
+  color: var(--blue);
+  border: solid 1px var(--blue);
+  text-align: center;
+}
+.news .btn:hover {
+  color: #ffffff;
+}
+.news {
+  overflow: hidden;
+}
+.news .container {
+  flex-direction: column;
+  align-items: start;
+}
+.news .news-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.news .news-banner {
+  width: 100%;
+  position: relative;
+}
+
+.news .news-banner .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-80px);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.news .news-banner .btn--prev {
+  left: -50px;
+}
+.news .news-banner .btn--next {
+  right: -50px;
+}
+
+.news .news__img {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.news .news__img img {
+  width: 100%;
+}
+.news .news__img .sticker {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: #fff;
+  background-color: var(--red);
+  padding: 10px;
+  /* position을 주면 inline도 상하패딩 먹음 */
+}
+.news .news__txt h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+/*********** news end ***********/
